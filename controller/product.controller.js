@@ -28,8 +28,6 @@ const newProduct = async (req, res) => {
   }
 };
 
-<ArrowBigDownDash />
-
 const getAllProduct = async (req, res) => {
   try {
     const getProduct = await productModel.find();
