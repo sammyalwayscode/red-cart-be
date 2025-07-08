@@ -43,4 +43,19 @@ const getAllProduct = async (req, res) => {
   }
 };
 
-module.exports = { newProduct, getAllProduct };
+const getOneProduct = async (req, res) => {
+  try {
+    const getProductOne = await productModel.findById(req.params.id);
+    res.status(200).json({
+      message: "Single product gotten successfully",
+      data: getProductOne,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Failed to get One Product",
+      data: error,
+    });
+  }
+};
+
+module.exports = { newProduct, getAllProduct, getOneProduct };
